@@ -36,7 +36,8 @@ public class BOJ10_6 {
         int mid = 0;    //중앙값
         int mode = 0;    //최빈값
         int range = 0;  //범위
-
+        
+        //최빈값 구하기
         for (int i = 0; i < n; i++) {
             int num = Integer.parseInt(br.readLine());
             list.add(num);
@@ -55,6 +56,7 @@ public class BOJ10_6 {
             }
         }
 
+        //2번째 들어간순간에 바로 출 .. . 력? . .. . .. . .....
         for (int i = 0; i < arr.length; i++) {
             if (max == arr[i]) {
                 if (i > 4000) {
@@ -75,8 +77,9 @@ public class BOJ10_6 {
         Collections.sort(list); //list 정렬
 
         //List<Integer> 값을 합치려면 stream 기법을 사용하면 된다.
-        //리스트.stream().mapToInt(Integer::intValue).sum();
+        //리스트.stream().mapToInt(Integer::intValue).sum(); -> 쓰지말란다
         //mapToDouble로 할 수 있나?
+        //Math.round() 안쓰고 format으로 반올림하면 -0 나올수도 있다.
         avg = (int) Math.round((double) list.stream().mapToInt(Integer::intValue).sum() / n);
         mid = list.get(n / 2);
         range = list.get(n - 1) - list.get(0);
