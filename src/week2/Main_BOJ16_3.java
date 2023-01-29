@@ -35,6 +35,7 @@ public class Main_BOJ16_3 {
             return;
         }
 
+        //브루트포스 전체탐색이라 굳이 isCheck 확인하지 않아도 된다.
         for (int i = 0; i < n; i++) {
             if (!isCheck[i]) {  //만약 방문한 노드가 아니라면
                 //isCheck[i] = true;  //방문한 노드로 변경 [f, f, f, f] -> [t, f, f, f]

@@ -7,8 +7,8 @@ public class Main_BOJ16_7 {
     public static int n;    //수의 개수
     public static long[] arr;    //수를 담을 배열
     public static int[] operator = new int[4];   //연산자 수를 담을 배열
-    //static int MAX = Integer.MAX_VALUE;    //최댓값
-    //static int MIN = Integer.MIN_VALUE;    //최솟값
+    //static int MAX = Integer.MIN_VALUE;    //최댓값
+    //static int MIN = Integer.MAX_VALUE;    //최솟값
 
     static long MAX = -1100000000;
     static long MIN = 1100000000;
@@ -31,6 +31,7 @@ public class Main_BOJ16_7 {
         st = new StringTokenizer(br.readLine());
         //+ - x ÷ 순
         for (int i = 0; i < 4; i++) {
+            //연산자같은건 배열에 담아서 그냥 풀어버리자 ..
             operator[i] = Integer.parseInt(st.nextToken());
         }
 

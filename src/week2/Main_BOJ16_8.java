@@ -17,7 +17,7 @@ public class Main_BOJ16_8 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
+        n = Integer.parseInt(br.readLine());
         isCheck = new boolean[n];
 
         arr = new int[n][n];
@@ -45,7 +45,7 @@ public class Main_BOJ16_8 {
         for (int i = num; i < n; i++) {
             if (!isCheck[i]) {  //방문하지 않은 사람이라면
                 isCheck[i] = true;  //방문한 사람으로 변경
-                recursion(num + 1,cnt + 1);
+                recursion(i + 1,cnt + 1);   //미친놈 .. 이거 i+1임;;
                 isCheck[i] = false;
             }
         }
@@ -62,7 +62,7 @@ public class Main_BOJ16_8 {
                     //스타트 팀으로 합계
                     start += arr[i][j];
                     start += arr[j][i];
-                } else if (!(isCheck[i] && isCheck[j])) {   //i, j 가 모두 false 면,
+                } else if (isCheck[i] == false && isCheck[j] == false) {   //i, j 가 모두 false 면,
                     //링크 팀으로 합계
                     link += arr[i][j];
                     link += arr[j][i];
@@ -71,6 +71,8 @@ public class Main_BOJ16_8 {
         }
 
         //차이
+        //System.out.println(start);
+        //System.out.println(link);
         int diff = Math.abs(start - link);
         MIN = Math.min(diff, MIN);
     }
