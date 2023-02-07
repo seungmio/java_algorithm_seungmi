@@ -6,6 +6,8 @@ public class Main_BOJ17_1 {
     /*
     [ DP ]
     동일한 계산을 반복해야 할 때 이전에 계산한 값을 메모리에 저장해서 동일한 계산의 반복 수행을 제거
+    top-down: 재귀 호출
+    bottom-up: 반복문
 
      */
     public static int n;
